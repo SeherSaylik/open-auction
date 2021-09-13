@@ -1,4 +1,5 @@
 pragma solidity ^0.8.4;
+import "hardhat/console.sol";
 
 contract OpenAuction {
     //statics
@@ -49,29 +50,14 @@ contract OpenAuction {
         _highestBid = bidPrice;
     }
 
-    function seeBidDetails()
-        public
-        view
-        returns (
-            string memory auctionStatus,
-            string memory auctionName,
-            uint256 minimumBidPrice,
-            address lastBidderAddress,
-            uint256 lastBidPrice
-        )
-    {
+    function seeBidDetails() public view returns (string memory, uint256) {
         string memory status;
         if (isActive == true) {
             status = "Auction continues.";
         } else {
             status = "Auction ended.";
         }
-        return (
-            status,
-            _auctionName,
-            _minBidPrice,
-            _bidderAddress,
-            _highestBid
-        );
+        console.log(_auctionName, _minBidPrice);
+        return (_auctionName, _minBidPrice);
     }
 }
