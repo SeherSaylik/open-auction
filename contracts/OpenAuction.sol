@@ -29,6 +29,7 @@ contract OpenAuction {
         isActive = true;
         _minBidPrice = minBidPrice;
         _auctionName = auctionName;
+        _highestBid = minBidPrice;
     }
 
     function endAuction() public onlyOwner {
