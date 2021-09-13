@@ -50,14 +50,29 @@ contract OpenAuction {
         _highestBid = bidPrice;
     }
 
-    function seeBidDetails() public view returns (string memory, uint256) {
+    function seeBidDetails()
+        public
+        view
+        returns (
+            string memory,
+            string memory,
+            uint256,
+            address,
+            uint256
+        )
+    {
         string memory status;
         if (isActive == true) {
             status = "Auction continues.";
         } else {
             status = "Auction ended.";
         }
-        console.log(_auctionName, _minBidPrice);
-        return (_auctionName, _minBidPrice);
+        return (
+            status,
+            _auctionName,
+            _minBidPrice,
+            _bidderAddress,
+            _highestBid
+        );
     }
 }

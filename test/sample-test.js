@@ -10,8 +10,7 @@ describe("OpenAuction", function () {
     await auction.deployed();
     const startAuction= await auction.startAuction("First Auction", 1000000);
     const rawBidDetails= await auction.seeBidDetails();
-    const bidDetails= [rawBidDetails[0], parseInt(rawBidDetails[1]._hex, 16)]
-    expect(bidDetails[0], bidDetails[1]).to.equal('First Auction', 1000000);
-
+    const bidDetails= [rawBidDetails[0], parseInt(rawBidDetails[1]._hex, 16), rawBidDetails[2], parseInt(rawBidDetails[3]._hex, 16), rawBidDetails[4]]
+    expect(bidDetails[0], bidDetails[1], bidDetails[2], bidDetails[3], bidDetails[4]).to.equal("Auction continues.", "First Auction", 1000000, "0x0000000000000000000000000000000000000000");
   });
 });
