@@ -10,7 +10,7 @@ contract OpenAuction {
     //states
     uint256 public _highestBid;
     bool public isActive;
-    address payable _bidderAddress;
+    address payable _highestBidderAddress;
 
     // Modifier
     modifier onlyOwner() {
@@ -46,8 +46,8 @@ contract OpenAuction {
             bidPrice >= _highestBid,
             "Bid price is not bigger than the highest bid price"
         );
-        _bidderAddress.transfer(_highestBid);
-        _bidderAddress = payable(address(msg.sender));
+        _highestBidderAddress.transfer(_highestBid);
+        _highestBidderAddress = payable(address(msg.sender));
         _highestBid = bidPrice;
     }
 
@@ -72,7 +72,7 @@ contract OpenAuction {
             status,
             _auctionName,
             _minBidPrice,
-            _bidderAddress,
+            _highestBidderAddress,
             _highestBid
         );
     }
