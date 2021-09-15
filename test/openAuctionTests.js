@@ -1,4 +1,3 @@
-const { parseBytes32String } = require("@ethersproject/strings");
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
