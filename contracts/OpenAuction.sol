@@ -44,7 +44,7 @@ contract OpenAuction {
         require(bidPrice >= _minBidPrice);
         require(
             bidPrice >= _highestBid,
-            "Bid price is not bigger than the highest bid price"
+            "Your bid price is not bigger than the highest bid price."
         );
         _highestBidderAddress.transfer(_highestBid);
         _highestBidderAddress = payable(address(msg.sender));
