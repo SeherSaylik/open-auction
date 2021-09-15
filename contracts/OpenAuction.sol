@@ -62,12 +62,7 @@ contract OpenAuction {
             uint256
         )
     {
-        string memory status;
-        if (isActive == true) {
-            status = "Auction continues.";
-        } else {
-            status = "Auction ended.";
-        }
+        string memory status = isActive ? "Auction continues." : "Auction ended.";
         return (
             status,
             _auctionName,
