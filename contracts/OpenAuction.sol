@@ -38,7 +38,7 @@ contract OpenAuction {
     }
 
     function bid() public payable {
-        require(isActive == true, "Auction is not available anymore");
+        require(isActive, "Auction is not available anymore.");
         uint256 bidPrice;
         bidPrice = msg.value;
         require(bidPrice >= _minBidPrice);
