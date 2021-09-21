@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 import "hardhat/console.sol";
 
@@ -62,7 +63,9 @@ contract OpenAuction {
             uint256
         )
     {
-        string memory status = isActive ? "Auction continues." : "Auction ended.";
+        string memory status = isActive
+            ? "Auction continues."
+            : "Auction ended.";
         return (
             status,
             _auctionName,
