@@ -3,20 +3,7 @@ import auctionABI from './artifacts/contracts/OpenAuction.sol/OpenAuction.json';
 import Web3 from 'web3';
 import './App.css';
 
-/* const addScoreToBC = async (uniqueName, score) =>{
-    const web3= new Web3(window.web3.currentProvider)
-    const auctionContract = new web3.eth.Contract(onboardContractABI, onboardContractAdress)
-    const defaultAccount = (await web3.eth.getAccounts())[0]
-    const addingResponse= await onboardContract.methods.addPoint(uniqueName,score)
-    .send({ from: defaultAccount, type:'0x2' })
-    if(addingResponse.status){
-      alert("Trainee's score is added to ethereum network")
-    }else{
-      alert("Transaction is failed")
-    }
-   }
-   */
-  const web3= new Web3(window.web3.currentProvider);
+const web3= new Web3(window.web3.currentProvider);
 
 
 function App(){
