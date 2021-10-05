@@ -63,5 +63,19 @@ describe("OpenAuction", async function () {
     );
   });
 
+  it("When we end auction we should be seeing 'Auction ended' status", async function () {
+    const [addr1, addr2] = await ethers.getSigners();
+    const Auction = await ethers.getContractFactory("OpenAuction");
+    const auction = await Auction.deploy();
+    await auction.deployed();
+    await auction.startAuction("First Auction", 1000000); // start the auction
+    await auction.connect(addr1).bid({ from: addr1.address, value: 1100000 });
+    await auction.connect(addr2).bid({from: addr2.address, value: 1200000})
+    await auction.connect(addr1).endAuction();
+    const bidDetails = await auction.seeBidDetails();
+    expect(bidDetails[0]).to.equal("Auction ended.")
+  });
+ 
+
   // TODO: Write a test for the `endAuction` function end expect the "Auction ended" message.
 });

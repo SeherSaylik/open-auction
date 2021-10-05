@@ -16,7 +16,7 @@ function App(){
 
     const callContract= async () =>{
       const auctionContractABI= auctionABI.abi;
-      const auctionAddress= '0xF31B27AB732c9799Ec9a86c57d893c8aaBEEbc64';
+      const auctionAddress= '0x86937D64BaEdB13D28E29d81Dd3fA6A7c78afAe8';
       const auctionContract = await new web3.eth.Contract(auctionContractABI, auctionAddress)
       console.log(auctionContract);
       const defaultAccount = (await web3.eth.getAccounts())[0]
@@ -30,13 +30,16 @@ function App(){
      }
 
      const makeBid = async ()=>{
+      if (bidPrice<=bid[4]){
+        alert("Bid price cannot be lower than the highest price")
+      }
       const auctionContractABI= auctionABI.abi;
-      const auctionAddress= '0xF31B27AB732c9799Ec9a86c57d893c8aaBEEbc64';
+      const auctionAddress= '0x86937D64BaEdB13D28E29d81Dd3fA6A7c78afAe8';
       const auctionContract = await new web3.eth.Contract(auctionContractABI, auctionAddress)
       const defaultAccount = (await web3.eth.getAccounts())[0]
       const sendBid = await auctionContract.methods.bid().send({from: defaultAccount, value: bidPrice})
       if (sendBid){
-        alert("successful transaction")
+        alert("Bid is successful")
       }
      }
 
@@ -47,9 +50,9 @@ function App(){
    return(
         <div className="full-page"> {callContract}
           <h1 className="title">Open Auction</h1>
-          <div className="auction"> {bid[1]} </div>
+          <div className="auction">Auction name: {bid[1]} </div>
           <br></br>
-          <div className="status">{bid[0]}</div>
+          <div className="status">Status: {bid[0]}</div>
           <br></br>
           <div className="grid-container">
             <div className="item1">Minimum Bid Price: {bid[2]} wei</div>

@@ -33,3 +33,6 @@ The contract simply ranks each new bid and always retains only the highest. When
 ## Deployment Script
 
 `node scripts/deploy.js`
+
+## In order to start react app
+'npm run start'

@@ -34,7 +34,7 @@ contract OpenAuction {
     }
 
     function endAuction() public onlyOwner {
-        payable(address(owner)).transfer(_highestBid);
+        payable(address(owner)).send(_highestBid);
         isActive = false;
     }
 
