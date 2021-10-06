@@ -6,6 +6,14 @@ In this project it is aimed to create an open auction without any time limit. Th
 
 The contract simply ranks each new bid and always retains only the highest. When the owner of the contract calls the 'endAuction' function to end the auction, the address with the highest bid wins.
 
+## Install necessary packages
+
+`npm install`
+
+## In order to start decentralized auction application 
+
+`npm run start`
+
 ## Hardhat Commands
 
 `npx hardhat help`
@@ -14,9 +22,6 @@ The contract simply ranks each new bid and always retains only the highest. When
 `npx hardhat clean`
 `npx hardhat node`
 
-## Install necessary packages
-
-`npm install`
 
 ## Compile contract
 
@@ -26,13 +31,11 @@ The contract simply ranks each new bid and always retains only the highest. When
 
 `npx hardhat test`
 
-## To run decentralized application 
-
-`npm start`
 
 ## Deployment Script
 
 `node scripts/deploy.js`
 
-## In order to start react app
-'npm run start'
+** Steps need to do: **
+1. Firstly compile the contract (hardhat compile) and get artifacts directory. We will need ABI(Application Binary Interface) file inside of it.
+2. In components to access the contract we need to use ABI as a parameter of calling contract function.
