@@ -14,28 +14,22 @@ The contract simply ranks each new bid and always retains only the highest. When
 
 `npm run start`
 
-## Hardhat Commands
+**Steps need to do**
+1. Firstly compile the contract (hardhat compile) and get artifacts directory. We will need ABI(Application Binary Interface) file inside of it.
+2. In components to access the contract we need to use ABI as a parameter of calling contract function.
+
+**If you want to deploy the contract from here:**
+1. Edit hardhat.config.js file with your API keys.
+2. Type `node scripts/deploy.js` into your terminal.
+
+
+
+## All Hardhat Commands
 
 `npx hardhat help`
 `npx hardhat accounts`
 `npx hardhat compile`
 `npx hardhat clean`
 `npx hardhat node`
-
-
-## Compile contract
-
-`hardhat compile`
-
-## Run Tests
-
 `npx hardhat test`
-
-
-## Deployment Script
-
 `node scripts/deploy.js`
-
-** Steps need to do: **
-1. Firstly compile the contract (hardhat compile) and get artifacts directory. We will need ABI(Application Binary Interface) file inside of it.
-2. In components to access the contract we need to use ABI as a parameter of calling contract function.
