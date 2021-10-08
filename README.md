@@ -15,7 +15,7 @@ The contract simply ranks each new bid and always retains only the highest. When
 `npm run start`
 
 **Steps need to do**
-1. Firstly compile the contract (hardhat compile) and get artifacts directory. We will need ABI(Application Binary Interface) file inside of it.
+1. Firstly compile the contract with `hardhat compile` and get the artifacts directory. We will have an ABI(Application Binary Interface) file inside of it.
 2. In components to access the contract we need to use ABI as a parameter of calling contract function.
 
 **If you want to deploy the contract from here:**
