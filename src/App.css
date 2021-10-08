@@ -1,0 +1,39 @@
+
+.title{
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: xxx-large;
+}
+
+.button{
+  height:50px;
+  width: 150px;
+  margin-left: 10px;
+}
+.auction , .status{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.808);
+    color: rgba(254, 255, 255, 0.993);
+    font-size: xxx-large;
+}
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header  menu menu'
+    'footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #e7e5de;
+  padding: 30px;
+
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
