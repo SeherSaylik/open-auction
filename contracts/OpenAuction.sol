@@ -27,6 +27,7 @@ contract OpenAuction {
         public
         onlyOwner
     {
+        require(!isActive, "Auction is already on.");
         isActive = true;
         _minBidPrice = minBidPrice;
         _auctionName = auctionName;

@@ -7,7 +7,7 @@ const web3= new Web3(window.web3.currentProvider);
 
 const callContract=async ()=>{
    const auctionContractABI= auctionABI.abi;
-   const auctionAddress= '0x86937D64BaEdB13D28E29d81Dd3fA6A7c78afAe8';
+   const auctionAddress= '0x09e6A6868161C7197f2e1904b13B502078e8EBd4';
    const auctionContract = await new web3.eth.Contract(auctionContractABI, auctionAddress)
    const defaultAccount = (await web3.eth.getAccounts())[0]
    return {
